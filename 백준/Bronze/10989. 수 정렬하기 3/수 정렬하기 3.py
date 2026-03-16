@@ -1,14 +1,10 @@
-import sys
-
-input = sys.stdin.readline
-
 n = int(input())
-count = [0] * 10001
+lst = [0] * 10000
+for i in range(n):
+    a = int(input())
+    lst[a-1] += 1
 
-for _ in range(n):
-    count[int(input())] += 1
-
-for i in range(1, 10001):
-    if count[i] != 0:
-        for _ in range(count[i]):
-            print(i)
+for i in range(10000):
+    if lst[i] > 0:
+        for j in range(lst[i]):
+            print(i+1)
