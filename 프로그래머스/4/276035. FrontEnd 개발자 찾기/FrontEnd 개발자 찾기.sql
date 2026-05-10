@@ -1,0 +1,6 @@
+SELECT DISTINCT D.ID, D.EMAIL, D.FIRST_NAME, D.LAST_NAME
+FROM DEVELOPERS D
+JOIN SKILLCODES S
+  ON D.SKILL_CODE & S.CODE = S.CODE   -- ✅ 해당 스킬을 실제로 보유하는지 확인
+WHERE S.CATEGORY = 'Front End'        -- ✅ Front End 스킬만 대상으로
+ORDER BY D.ID
